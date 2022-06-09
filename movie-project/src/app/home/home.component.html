@@ -1,0 +1,53 @@
+<section class="movie-list">
+        <div class="container mt-5" style="width: 75%">
+          <div class="row">
+            <div class="col-md-3">
+              <form>
+                <div class="mb-3">
+                  <label for="" class="form-label"></label>
+                  <input
+                    type="type"
+                    [(ngModel)]="searchText"
+                    name="searchText"
+                    class="form-control searchBar"
+                    placeholder="&#xF002;" style="font-family:Arial, FontAwesome"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="col-md-3 ms-auto">
+              <div class="mb-3">
+                <label for="genres" class="form-label"></label>
+                <select required
+                  id="genres"
+                  name="genres"
+                  class="form-select"
+                >
+                <option selected>Genre</option>
+                  <option *ngFor="let genre of genres" [value]="genre.id">
+                    {{ genre.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-4">
+            <div class="col" *ngFor="let movie of trendingMovies | filter: searchText">
+              <div class="card border-0" (click)="goToMovie('trending', movie.id)">
+                <div class="card-body">
+                  <img
+                    src={{movie.posterUrl}}
+                    class="card-img-top img-fluid"
+                    alt="..."
+                  />
+                  <h6 class="card-title">{{ movie.title }}</h6>
+                  <p class="card-text">{{ movie.year }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+   
+      
+
+</section>

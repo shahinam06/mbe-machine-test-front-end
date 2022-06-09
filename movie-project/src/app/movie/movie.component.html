@@ -1,0 +1,55 @@
+<section class="movie-details">
+    <div class="container mt-5" style="width: 75%">
+      <div class="row mb-4">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-3">
+          <form>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input
+                type="type"
+                [(ngModel)]="searchText"
+                name="searchText"
+                class="form-control search"
+                placeholder="&#xF002;" style="font-family:Arial, FontAwesome"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div
+          class="card mb-3 ms-auto me-auto border-0"
+          style="max-width: 540px"
+        >
+          <div class="row g-0">
+            <div class="col-md-5">
+              <img
+                src="{{ movie?.posterUrl }}"
+                class="img-fluid rounded-start"
+                alt="..."
+              />
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h3 class="card-title">{{ movie?.title }}</h3>
+                <p>
+                  <small>{{ movie?.year }}</small>
+                </p>
+                <p>
+                  <small>{{ movie?.actors }}</small>
+                </p>
+                <p><small>Plot</small></p>
+                <p>
+                  <small>{{ movie?.plot }}</small>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
